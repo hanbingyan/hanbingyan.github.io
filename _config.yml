@@ -56,12 +56,12 @@ widgets:
 - links
 ##- weibo
 ##- douban
-- rss
+##- rss
 ## provide seven widgets:category,tag,rss,archive,tagcloud,links,weibo,douban
 
 
 #### RSS 
-rss: /atom.xml ## RSS address.
+# rss: /atom.xml ## RSS address.
 
 #### Image
 imglogo:
@@ -100,9 +100,9 @@ author:
 ## if you set them, the corresponding  share button will show on the footer
 
 #### Toc
-toc:
-  article: true   ## show contents in article.
-  aside: true     ## show contents in aside.
+##toc:
+#  article: true   ## show contents in article.
+#  aside: true     ## show contents in aside.
 ## you can set both of the value to true of neither of them.
 ## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
 
