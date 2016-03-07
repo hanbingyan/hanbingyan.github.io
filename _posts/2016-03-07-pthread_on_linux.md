@@ -17,6 +17,7 @@ man pthread_create
 每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在Linux中就是一个无符号长整型数据。
 
 1.创建新的线程
+
 ```cpp
 int pthread_create (pthread_t *thread,pthread_attr_t *attr,void *(*start_routine)(void *),void *arg)
 ```
@@ -42,6 +43,7 @@ int pthread_cancel (pthread_t thread)
 一个线程可以通过调用pthread_cancel函数来请求取消同一进程中的线程，这个线程由thread参数指定。如果操作成功则返回0，失败则返回对应的错误编号.
 
 看一个例子：
+
 ```CPP
 /******************************************************************************
 * FILE: hello.c
@@ -79,11 +81,14 @@ int main(int argc, char *argv[])
    /* Last thing that main() should do */
    pthread_exit(NULL);
 }
+
 ```
 在Shell中输入以下命令编译执行
+
 ```CPP
 gcc -Wall hello.c -lpthread -o hello
 ./hello
+
 ```
 输出结果
 
