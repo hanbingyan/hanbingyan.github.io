@@ -13,10 +13,10 @@ man pthread_create
 
 <!--more-->
 
-* any list
+* TOC
 {:toc}
 
-## 线程的创建和管理
+### 线程的创建和管理
 
 每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在Linux中就是一个无符号长整型数据。
 
