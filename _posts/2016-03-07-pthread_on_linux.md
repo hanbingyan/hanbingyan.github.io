@@ -13,8 +13,7 @@ man pthread_create
 
 <!--more-->
 
-* TOC
-
+* any list
 {:toc}
 
 一、线程的创建和管理
