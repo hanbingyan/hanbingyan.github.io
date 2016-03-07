@@ -44,7 +44,7 @@ int pthread_cancel (pthread_t thread)
 
 看一个例子：
 
-```CPP
+```cpp
 /******************************************************************************
 * FILE: hello.c
 * DESCRIPTION:
@@ -81,21 +81,20 @@ int main(int argc, char *argv[])
    /* Last thing that main() should do */
    pthread_exit(NULL);
 }
-
 ```
 在Shell中输入以下命令编译执行
 
-```CPP
+```cpp
 gcc -Wall hello.c -lpthread -o hello
 ./hello
-
 ```
 输出结果
 
 
 
 下面这个例子传给线程一些初始化用的参数。
-```CPP
+
+```cpp
 /******************************************************************************
 * FILE: hello_arg2.c
 * DESCRIPTION:
@@ -196,7 +195,7 @@ pthread_attr_getdetachstate (attr,detachstate)
 
 下面看一个例子，可以具体体会显式地设置一个线程为joinable的过程。
 
-```CPP
+```cpp
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -251,7 +250,6 @@ printf("Main: program completed. Exiting.\n");
 
 pthread_exit(NULL);
 }
-
 ```
 
 堆栈管理 （Stack Management）
@@ -267,8 +265,7 @@ POSIX标准没有规定一个线程的堆栈大小。安全可移植的程序不
 
 
 
-```CPP
-
+```cpp
 #include<stdlib.h>
 #include <pthread.h>
 #include <stdio.h>
@@ -318,7 +315,6 @@ int main(int argc, char *argv[])
    printf("Created %ld threads.\n", t);
    pthread_exit(NULL);
 }
-
 ```
 
 
@@ -360,7 +356,7 @@ phtread_mutex_unlock(pthread_mutex_t *mutex)
 
  下面是一个利用多线程进行向量点乘的程序。
 
-```CPP
+```cpp
 /*****************************************************************************
 * FILE: dotprod_mutex.c
 * DESCRIPTION:
@@ -533,7 +529,7 @@ pthread_cond_signal() 函数结束时，必须解锁mutex，以供pthread_cond_w
 
 下面是一个例子：
 
-```CPP
+```cpp
 /******************************************************************************
 * FILE: condvar.c
 * DESCRIPTION:
