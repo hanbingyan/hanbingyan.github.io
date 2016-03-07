@@ -12,7 +12,7 @@ baseurl: http://hanbingyan.github.io
 paginate: 10
 
 # Markdown Processors
-kramdown: redcarpet
+markdown: redcarpet
 redcarpet:
   extensions:
     - hard_wrap
