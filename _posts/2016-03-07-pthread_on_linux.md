@@ -20,7 +20,7 @@ man pthread_create
 
 每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在Linux中就是一个无符号长整型数据。
 
-1.创建新的线程
+## 创建新的线程
 
 ```cpp
 int pthread_create (pthread_t *thread,pthread_attr_t *attr,void *(*start_routine)(void *),void *arg)
@@ -328,7 +328,8 @@ pthread_equal比较两个线程的ID,如果不同则返回0,否则返回一个�
 
 
 
-互斥锁 Mutex
+## 互斥锁 Mutex
+
 Mutex常常被用来保护那些可以被多个线程访问的共享资源，比如可以防止多个线程同时更新同一个数据时出现混乱。
 使用互斥锁的一般步骤是：
 创建一个互斥锁，即声明一个pthread_mutex_t类型的数据,然后初始化，只有初始化之后才能使用；
@@ -503,7 +504,7 @@ pthread_exit(NULL);
 输出结果：
 
 
-条件变量 Condition Variable
+## 条件变量 Condition Variable
 
 互斥锁只有两种状态，这限制了它的用途。条件变量允许线程在阻塞的时候等待另一个线程发送的信号，当收到信号后，阻塞的线程就被唤醒并试图锁定与之相关的互斥锁。条件变量要和互斥锁结合使用。
 
