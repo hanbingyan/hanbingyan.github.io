@@ -15,8 +15,9 @@ man pthread_create
 每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在Linux中就是一个无符号长整型数据。
 
 1.创建新的线程
+```CPP
 int pthread_create (pthread_t *thread,pthread_attr_t *attr,void *(*start_routine)(void *),void *arg)
-
+```
 若创建成功，返回0；若出错，则返回错误编号. thread是线程标识符，但这个参数不是由由用户指定的，而是由pthread_create函数在创建时将新的线程的标识符放到这个变量中. attr指定线程的属性，可以用NULL表示默认属性. start_routine指定线程开始运行的函数，arg是start_routine所需要的参数，是一个无类型指针.
 默认地，线程在被创建时要被赋予一定的属性，这个属性存放在数据类型pthread_attr_t中，它包含了线程的调度策略，堆栈的相关信息，join or detach 的状态等。
 pthread_attr_init 和pthread_attr_destroy 函数分别用来创建和销毁pthread_attr_t，具体函数申明可参考man帮助. 
@@ -39,6 +40,7 @@ int pthread_cancel (pthread_t thread)
 一个线程可以通过调用pthread_cancel函数来请求取消同一进程中的线程，这个线程由thread参数指定。如果操作成功则返回0，失败则返回对应的错误编号.
 
 看一个例子：
+```CPP
 /******************************************************************************
 * FILE: hello.c
 * DESCRIPTION:
@@ -75,18 +77,18 @@ int main(int argc, char *argv[])
    /* Last thing that main() should do */
    pthread_exit(NULL);
 }
-
+```
 在Shell中输入以下命令编译执行
-
+```CPP
 gcc -Wall hello.c -lpthread -o hello
 ./hello
-
+```
 输出结果
 
 
 
 下面这个例子传给线程一些初始化用的参数。
-
+```CPP
 /******************************************************************************
 * FILE: hello_arg2.c
 * DESCRIPTION:
@@ -158,7 +160,7 @@ for(t=0;t<NUM_THREADS;t++) {
   }
 pthread_exit(NULL);
 }
-
+```
 
 
 
@@ -186,6 +188,8 @@ pthread_attr_setdetachstate (attr,detachstate)
 pthread_attr_getdetachstate (attr,detachstate)
 
 下面看一个例子，可以具体体会显式地设置一个线程为joinable的过程。
+
+```CPP
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -241,7 +245,7 @@ printf("Main: program completed. Exiting.\n");
 pthread_exit(NULL);
 }
 
-
+```
 
 堆栈管理 （Stack Management）
 pthread_attr_getstacksize (attr, stacksize)
@@ -256,7 +260,7 @@ POSIX标准没有规定一个线程的堆栈大小。安全可移植的程序不
 
 
 
-
+```CPP
 
 #include<stdlib.h>
 #include <pthread.h>
@@ -308,7 +312,7 @@ int main(int argc, char *argv[])
    pthread_exit(NULL);
 }
 
-
+```
 
 
 
@@ -349,6 +353,7 @@ phtread_mutex_unlock(pthread_mutex_t *mutex)
 
  下面是一个利用多线程进行向量点乘的程序。
 
+```CPP
 /*****************************************************************************
 * FILE: dotprod_mutex.c
 * DESCRIPTION:
@@ -490,6 +495,7 @@ free (b);
 pthread_mutex_destroy(&mutexsum);
 pthread_exit(NULL);
 }   
+```
 
 输出结果：
 
@@ -518,7 +524,9 @@ pthread_cond_broadcast (condition)
 pthread_cond_wait() 会阻塞调用它的线程，直到收到某一信号。这个函数需要在mutex已经被锁之后进行调用，并且当线程被阻塞时，会自动解锁mutex. 信号收到后，线程被唤醒，这时mutex又会被这个线程锁定。
 pthread_cond_signal() 函数结束时，必须解锁mutex，以供pthread_cond_wait()锁定mutex. 当不止一个线程在等待信号时，要用pthread_cond_broadcast() 代替pthread_cond_signal() 来告诉所有被该条件变量阻塞的线程结束阻塞状态。
 
-下面是一个例子：	
+下面是一个例子：
+
+```CPP
 /******************************************************************************
 * FILE: condvar.c
 * DESCRIPTION:
@@ -633,7 +641,7 @@ int main(int argc, char *argv[])
   pthread_exit (NULL);
 
 }
-
+```
 
 
 
