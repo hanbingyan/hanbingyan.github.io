@@ -168,12 +168,8 @@ pthread_exit(NULL);
 }
 ```
 
-
-
-
-
-
 对线程的阻塞（Joining and Detaching Threads）
+
 阻塞是线程之间同步的一种方法
 int pthread_join(pthread_t threadid, void **value_ptr)
 pthread_join 函数会让调用它的线程等待threadid线程运行结束之后再运行. value_ptr 存放了其他线程的返回值。一个可以被join的线程，仅仅可以被别的一个线程join，同时有多个线程尝试join同一个线程时，最终结果是未知的。另外，线程不能join自己。
