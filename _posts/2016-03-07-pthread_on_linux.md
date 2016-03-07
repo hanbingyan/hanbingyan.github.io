@@ -11,6 +11,8 @@ layout: post
 在Linux环境下，可以在Shell中通过man 查询到PThreads的每个函数命令,如：
 man pthread_create
 
+<!--more-->
+
 一、线程的创建和管理
 每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在Linux中就是一个无符号长整型数据。
 
