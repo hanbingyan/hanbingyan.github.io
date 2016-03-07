@@ -17,7 +17,7 @@ man pthread_create
 每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在Linux中就是一个无符号长整型数据。
 
 1.创建新的线程
-```CPP
+```cpp
 int pthread_create (pthread_t *thread,pthread_attr_t *attr,void *(*start_routine)(void *),void *arg)
 ```
 若创建成功，返回0；若出错，则返回错误编号. thread是线程标识符，但这个参数不是由由用户指定的，而是由pthread_create函数在创建时将新的线程的标识符放到这个变量中. attr指定线程的属性，可以用NULL表示默认属性. start_routine指定线程开始运行的函数，arg是start_routine所需要的参数，是一个无类型指针.
