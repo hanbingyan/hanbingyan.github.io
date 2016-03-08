@@ -26,11 +26,11 @@ Pthreads 指定 API 来处理线程要求的大部分行为。这些行为包括
 
 
 
-## 线程的创建和管理
+# 线程的创建和管理
 
 每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在Linux中就是一个无符号长整型数据。
 
-### 创建新的线程
+## 创建新的线程
 
 ```cpp
 int pthread_create (pthread_t *thread,pthread_attr_t *attr,void *(*start_routine)(void *),void *arg)
@@ -41,7 +41,7 @@ pthread_attr_init 和pthread_attr_destroy 函数分别用来创建和销毁pthre
 
 
 
-###结束线程
+##结束线程
 
 当发生以下情形之一时，线程就会结束：
 
@@ -226,7 +226,7 @@ Thread 5: Russian: Zdravstvytye, mir!  Sum=15
 Thread 7: Latin: Orbis, te saluto!  Sum=28
 Thread 6: Japan: Sekai e konnichiwa!  Sum=21
 ```
-### 对线程的阻塞（Joining and Detaching Threads）
+## 对线程的阻塞（Joining and Detaching Threads）
 
 阻塞是线程之间同步的一种方法.
 
@@ -330,7 +330,7 @@ Main: completed join with thread 1 having a status of 1
 Main: program completed. Exiting.
 ```
 
-### 堆栈管理 （Stack Management）
+## 堆栈管理 （Stack Management）
 
 ```cpp
 pthread_attr_getstacksize (attr, stacksize)
@@ -408,7 +408,7 @@ Thread 3: stack size = 9000000 bytes
 ```
 
 
-### 其他重要函数
+## 其他重要函数
 
 ```cpp
 pthread_self ()
@@ -419,7 +419,7 @@ pthread_equal (thread1,thread2)
 
 
 
-## 互斥锁 Mutex
+# 互斥锁 Mutex
 
 Mutex常常被用来保护那些可以被多个线程访问的共享资源，比如可以防止多个线程同时更新同一个数据时出现混乱。
 
@@ -616,11 +616,11 @@ Sum =  400000.000000
 ```
 
 
-## 条件变量 Condition Variable
+# 条件变量 Condition Variable
 
 互斥锁只有两种状态，这限制了它的用途。条件变量允许线程在阻塞的时候等待另一个线程发送的信号，当收到信号后，阻塞的线程就被唤醒并试图锁定与之相关的互斥锁。条件变量要和互斥锁结合使用。
 
-### 条件变量的声明和初始化
+## 条件变量的声明和初始化
 
 通过声明pthread_cond_t类型的数据,并且必须先初始化才能使用。
 
