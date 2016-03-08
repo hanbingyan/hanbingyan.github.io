@@ -9,7 +9,7 @@ layout: post
 ---
 
 
-*TOC
+* TOC
 {:TOC}
 
 <!--more-->
@@ -41,7 +41,7 @@ pthread_attr_init 和pthread_attr_destroy 函数分别用来创建和销毁pthre
 
 
 
-##结束线程
+## 结束线程
 
 当发生以下情形之一时，线程就会结束：
 
@@ -226,6 +226,7 @@ Thread 5: Russian: Zdravstvytye, mir!  Sum=15
 Thread 7: Latin: Orbis, te saluto!  Sum=28
 Thread 6: Japan: Sekai e konnichiwa!  Sum=21
 ```
+
 ## 对线程的阻塞（Joining and Detaching Threads）
 
 阻塞是线程之间同步的一种方法.
