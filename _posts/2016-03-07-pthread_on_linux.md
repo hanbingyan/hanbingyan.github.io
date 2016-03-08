@@ -10,7 +10,7 @@ layout: post
 
 
 * TOC
-{:TOC}
+{:toc}
 
 <!--more-->
 
@@ -35,6 +35,7 @@ Pthreads 指定 API 来处理线程要求的大部分行为。这些行为包括
 ```cpp
 int pthread_create (pthread_t *thread,pthread_attr_t *attr,void *(*start_routine)(void *),void *arg)
 ```
+
 若创建成功，返回0；若出错，则返回错误编号. thread是线程标识符，但这个参数不是由由用户指定的，而是由pthread_create函数在创建时将新的线程的标识符放到这个变量中. attr指定线程的属性，可以用NULL表示默认属性. start_routine指定线程开始运行的函数，arg是start_routine所需要的参数，是一个无类型指针.
 默认地，线程在被创建时要被赋予一定的属性，这个属性存放在数据类型pthread_attr_t中，它包含了线程的调度策略，堆栈的相关信息，join or detach 的状态等。
 pthread_attr_init 和pthread_attr_destroy 函数分别用来创建和销毁pthread_attr_t，具体函数申明可参考man帮助. 
@@ -62,6 +63,7 @@ main() 函数先结束了，而且自己没有调用pthread_exit来等所有线�
 ```cpp
 void pthread_exit (void *retval)
 ```
+
 retval是由用户指定的参数，pthread_exit完成之后可以通过这个参数获得线程的退出状态
 
 ```cpp
@@ -110,12 +112,14 @@ int main(int argc, char *argv[])
    pthread_exit(NULL);
 }
 ```
+
 在Shell中输入以下命令编译执行
 
 ```cpp
 gcc -Wall hello.c -lpthread -o hello
 ./hello
 ```
+
 输出结果
 
 ```cpp
@@ -206,6 +210,7 @@ for(t=0;t<NUM_THREADS;t++) {
 pthread_exit(NULL);
 }
 ```
+
 输出结果：
 
 ```cpp
@@ -234,6 +239,7 @@ Thread 6: Japan: Sekai e konnichiwa!  Sum=21
 ```cpp
 int pthread_join(pthread_t threadid, void **value_ptr)
 ```
+
 pthread_join 函数会让调用它的线程等待threadid线程运行结束之后再运行. value_ptr 存放了其他线程的返回值。一个可以被join的线程，仅仅可以被别的一个线程join，同时有多个线程尝试join同一个线程时，最终结果是未知的。另外，线程不能join自己。
 
 上面提到过，创建一个线程时，要赋予它一定的属性，这其中就包括joinable or detachable 的属性，只有被声明成joinable的线程，可以被其他线程join.
@@ -318,7 +324,9 @@ printf("Main: program completed. Exiting.\n");
 pthread_exit(NULL);
 }
 ```
+
 输出结果：
+
 ```cpp
 Main: creating thread 0
 Main: creating thread 1
@@ -395,6 +403,7 @@ int main(int argc, char *argv[])
    pthread_exit(NULL);
 }
 ```
+
 输出结果：
 
 ```cpp
@@ -439,6 +448,7 @@ Mutex常常被用来保护那些可以被多个线程访问的共享资源，比
 最后互斥锁被显式地调用pthread_mutex_destroy来进行销毁。
 
 有两种方式初始化一个互斥锁：第一种，利用已经定义的常量初始化，例如
+
 ```cpp
 pthread_mutex_t mymutex = PTHREAD_MUTEX_INITIALIZER;
 ```
@@ -450,6 +460,7 @@ pthread_mutex_t mymutex = PTHREAD_MUTEX_INITIALIZER;
 最后需要指出的是，保护共享数据是程序员的责任。程序员要负责所有可以访问该数据的线程都使用mutex这种机制，否则，不使用mutex的线程还是有可能对数据造成破坏。
 
 相关函数
+
 ```cpp
 pthread_mutex_init (mutex,attr)
 int pthread_mutex_destroy (pthread_mutex_t *mutex)
@@ -628,6 +639,7 @@ Sum =  400000.000000
 初始化的方法也有两种：
 
 第一种，利用内部定义的常量，例如：
+
 ```cpp
 pthread_cond_t myconvar = PTHREAD_COND_INITIALIZER;
 ```
@@ -637,11 +649,13 @@ pthread_cond_t myconvar = PTHREAD_COND_INITIALIZER;
 用pthread_cond_destroy() 销毁一个条件变量。
 
 相关函数：
+
 ```cpp
 pthread_cond_wait (condition,mutex)
 pthread_cond_signal (condition)
 pthread_cond_broadcast (condition)
 ```
+
 pthread_cond_wait() 会阻塞调用它的线程，直到收到某一信号。这个函数需要在mutex已经被锁之后进行调用，并且当线程被阻塞时，会自动解锁mutex. 信号收到后，线程被唤醒，这时mutex又会被这个线程锁定。
 
 pthread_cond_signal() 函数结束时，必须解锁mutex，以供pthread_cond_wait()锁定mutex. 当不止一个线程在等待信号时，要用pthread_cond_broadcast() 代替pthread_cond_signal() 来告诉所有被该条件变量阻塞的线程结束阻塞状态。
@@ -764,6 +778,7 @@ int main(int argc, char *argv[])
 
 }
 ```
+
 输出结果：
 
 ```cpp
