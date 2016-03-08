@@ -9,7 +9,7 @@ layout: post
 
 \\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\]
 
-$$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$
+$$ \mathbf{X} \_{n,p} = \mathbf{A} \_{n,k} \mathbf{B} \_{k,p} $$
 
 $$ \mathsf{Data = PCs} \times \mathsf{Loadings} $$
 
