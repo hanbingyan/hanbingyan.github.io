@@ -2,25 +2,25 @@
 #   Main Configs   #
 # ---------------- #
 baseurl: 
-url: http://mazhuang.org
+url: https://github.com/hanbingyan/hanbingyan.github.iohttps
 date_format: "ordinal"
-title: 码志
-subtitle: "打码改变人生"
-description: "码志|打码改变人生"
-keywords: 码志
+title: My Blog
+subtitle: "学习笔记"
+description: "笔记|算法 Ubuntu"
+keywords: 笔记
 favicon: /favicon.ico
 timezone: Asia/Shanghai
 encoding: "utf-8"
-source_code: https://github.com/mzlogin/mzlogin.github.io
+source_code: https://github.com/hanbingyan/hanbingyan.github.io
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma 
-organization: Sogou, Inc.
-organization_url: https://www.sogou.com
-location: Beijing, China
-email: chumpma@gmail.com
+author: HAN Bingyan 
+organization: No organization.
+organization_url: https://github.com/hanbingyan
+location: Hefei, China
+email: hanbingyan@gmail.com
 
 # ---------------- #
 #    Navigation    #
@@ -79,21 +79,21 @@ collections:
 # ---------------- #
 #      Socials     #
 # ---------------- #
-duoshuo_username: mazhuang
-github_username: mzlogin
-douban_username: freedim
-facebook_username: mzlogin
-weibo_username: mzlogin
-zhihu_username: mzlogin
-twitter_username: mzlogin
+duoshuo: false 
+github_username: hanbingyan
+douban: false
+facebook: false
+weibo: false
+zhihu: false
+twitter: false
 changyan: false
 
 # ---------------- #
 #      Datas       #
 # ---------------- #
-skill_software_keywords: [Java, C++, Python, Design Patterns]
-skill_mobile_app_keywords: [Android, Reverse Engineering]
-skill_windows_keywords: [Win32 SDK, DuiLib, WTL, COM, WinDbg]
-popular_repos: ['chinese-copywriting-guidelines','android-reverse-engineering', 'csdncommenter', 'mzlogin.github.io', 'vim-markdown-toc']
-contribute_repos: ['sparanoid/chinese-copywriting-guidelines', 'waylife/RentCrawer']
+skill_software_keywords: [C++, Matlab, R, Latex]
+skill_mobile_app_keywords: [Android]
+skill_windows_keywords: [Visual Studio]
+popular_repos: ['mzlogin.github.io']
+# contribute_repos: ['sparanoid/chinese-copywriting-guidelines', 'waylife/RentCrawer']
 
