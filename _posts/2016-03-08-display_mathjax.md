@@ -1,55 +1,17 @@
 ---
 published: true
-title: PThreads学习
+title: Dispaly Math equations and symbols
 category: Latex
 tags: 
   - latex
 layout: post
 ---
-Let's test some inline math $x$, $y$, $x_1$, $y_1$.
 
-Now a inline math with special character: $|\psi\rangle$, $x'$, $x^\*$.
+\\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\]
 
-Test a display math:
-$$
-   |\psi_1\rangle = a|0\rangle + b|1\rangle
-$$
-Is it O.K.?
+$$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$
 
-Test a display math with equation number:
-\begin{equation}
-   |\psi_1\rangle = a|0\rangle + b|1\rangle
-\end{equation}
-Is it O.K.?
+$$ \mathsf{Data = PCs} \times \mathsf{Loadings} $$
 
-Test a display math with equation number:
-$$
-  \begin{align}
-    |\psi_1\rangle &= a|0\rangle + b|1\rangle \\\\
-    |\psi_2\rangle &= c|0\rangle + d|1\rangle
-  \end{align}
-$$
-Is it O.K.?
+$$a^2 + b^2 = c^2$$
 
-And test a display math without equaltion number:
-$$
-  \begin{align\*}
-    |\psi_1\rangle &= a|0\rangle + b|1\rangle \\\\
-    |\psi_2\rangle &= c|0\rangle + d|1\rangle
-  \end{align\*}
-$$
-Is it O.K.?
-
-Test a display math with equation number:
-\begin{align}
-    |\psi_1\rangle &= a|0\rangle + b|1\rangle \\\\
-    |\psi_2\rangle &= c|0\rangle + d|1\rangle
-\end{align}
-Is it O.K.?
-
-And test a display math without equaltion number:
-\begin{align\*}
-    |\psi_1\rangle &= a|0\rangle + b|1\rangle \\\\
-    |\psi_2\rangle &= c|0\rangle + d|1\rangle
-\end{align\*}
-Is it O.K.?
