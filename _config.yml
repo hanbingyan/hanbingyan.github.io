@@ -92,7 +92,5 @@ changyan: false
 #      Datas       #
 # ---------------- #
 skill_software_keywords: [C++, Matlab, R, Latex]
-skill_mobile_app_keywords: [Android]
-skill_windows_keywords: [Visual Studio]
 popular_repos: ['mzlogin.github.io']
 # contribute_repos: ['sparanoid/chinese-copywriting-guidelines', 'waylife/RentCrawer']
