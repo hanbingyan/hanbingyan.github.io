@@ -10,12 +10,12 @@ layout: post
 先来几个较复杂的数学公式：
 
 
-\\[ \Psi(z) \ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) + \frac{\mu}{2}\||z-\tilde{w}\||^2 ~. \\]
+$$ \Psi(z) \ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) + \frac{\mu}{2}\||z-\tilde{w}\||^2 ~. $$
  
  
-\\[
+$$
 P(z) \ge P(w^+) + \frac{\rho}{2}\|w^+-y\|^2 +\rho(y-w^+)^\top(z-y) -\left(1+\frac{\rho}{\mu}\right)\left(P(w^+;y).
-\\]
+$$
 
 $$\begin{align*}
 P(z) &=  \Psi(z) + \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
