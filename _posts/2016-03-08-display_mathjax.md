@@ -13,6 +13,16 @@ layout: post
 
 $$ \mathsf{Data = PCs} \times \mathsf{Loadings} $$
 
+$$ \begin{align*}
+  &O\left(d\left(n+
+      \min\left\{\frac{1}{\lambda\,\gamma},\sqrt{\frac{n}{\lambda\,\gamma}}\right\}\right)\log(1/\epsilon)\,
+    \log(1/\delta)\,\max\{1,\log^2(1/(\lambda\,\gamma\,n))\}\right) \\
+  &~~=~~ \tilde{O}\left(d\left(n+
+      \min\left\{\frac{1}{\lambda\,\gamma},\sqrt{\frac{n}{\lambda\,\gamma}}\right\}\right)\right)
+  ~.
+\end{align*} 
+$$
+
 $$a^2 + b^2 = c^2$$
 
 \\[ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \\]
@@ -37,5 +47,41 @@ $$ \hat{y}  \check{y}  \breve{y} $$
 $$ \because  \therefore  \forall  \exists \not=  \not> \not\subset $$
 
 $$ \prime  \int  \iint  \iiint  \iiiint  \oint  \lim  \infty  \nabla $$
+
+$$ \pm $$  $$ \times $$  $$ \div $$  $$ \mid $$  $$ \nmid $$  $$ \cdot $$  $$ \circ $$
+$$ \ast $$  $$ \bigodot $$  $$ \bigotimes $$  $$ \bigoplus $$ $$\leq $$ $$ \geq $$
+$$ \neq $$  $$ \approx $$  $$ \equiv $$  $$ \sum $$  $$ \prod $$  $$ \coprod $$
+
+集合运算符：
+$$ \emptyset $$
+$$ \in $$
+$$ \notin $$
+$$ \subset $$
+$$ \supset $$
+$$ \subseteq $$
+$$ \supseteq $$
+$$ \bigcap $$
+$$ \bigcup $$
+$$ \bigvee $$
+$$ \bigwedge $$
+$$ \biguplus $$
+$$ \bigsqcup $$
+
+对数运算符：
+$$ \log $$
+$$ \lg $$
+$$ \ln $$
+
+三角运算符：
+
+$$ \bot $$
+$$ \angle $$
+$$ 30^\circ $$
+$$ \sin $$
+$$ \cos $$
+$$ \tan $$
+$$ \cot $$
+$$ \sec $$
+$$ \csc $$
 
 
