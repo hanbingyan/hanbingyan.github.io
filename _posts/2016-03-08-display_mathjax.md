@@ -12,8 +12,7 @@ layout: post
 
 \\[ \Psi(z) \ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) + \frac{\mu}{2}\|z-\tilde{w}\|^2 ~. \\]
  
-\\[
-\begin{align*}
+$$ \begin{align*}
 P(z) &=  \Psi(z) + \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
 \frac{\mu}{2} \|z-y\|^2 \\
 &\ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) +
@@ -25,10 +24,9 @@ P(z) &=  \Psi(z) + \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
 &= P(\tilde{w};y) + \frac{\rho}{2}\|\tilde{w}-y\|^2 + \rho(y-\tilde{w})^\top(z-y) +
 \frac{\mu}{2}\left(\|z-\tilde{w}\|^2 + \|z-y\|^2 \right) ~.
 \end{align*}
-\\]
+$$
 
-\\[
-\begin{align*}
+$$ \begin{align*}
 &\frac{\rho}{2}\|\tilde{w}-y\|^2 + \rho(y-\tilde{w})^\top(z-y) +
 \frac{\mu}{2}\|z-\tilde{w}\|^2 - \left( \frac{\rho}{2}\|w^+-y\|^2 + \rho(y-w^+)^\top(z-y) +
 \frac{\mu}{2}\|z-w^+\|^2\right)\\
@@ -44,12 +42,11 @@ P(z) &=  \Psi(z) + \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
 &\ge - \frac{\mu}{2} \|z-w^+\|^2 - \frac{\rho(\rho+\mu)}{2\mu}\|\tilde{w}-w^+\|^2
 ~.
 \end{align*}
-\\]
+$$
 
 
 \\[
-P(z) \ge P(w^+) + \frac{\rho}{2}\|w^+-y\|^2 +
-\rho(y-w^+)^\top(z-y) + \frac{\mu}{2}\|z-y\|^2 - \left(1+\frac{\rho}{\mu}\right)\left(P(w^+;y)-P(\tilde{w};y)\right) ~.
+P(z) \ge P(w^+) + \frac{\rho}{2}\|w^+-y\|^2 +\rho(y-w^+)^\top(z-y) -\left(1+\frac{\rho}{\mu}\right)\left(P(w^+;y).
 \\]
 
 
