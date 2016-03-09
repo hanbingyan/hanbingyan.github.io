@@ -10,9 +10,14 @@ layout: post
 先来几个较复杂的数学公式：
 
 
-\\[ \Psi(z) \ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) + \frac{\mu}{2}\|z-\tilde{w}\|^2 ~. \\]
+\\[ \Psi(z) \ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) + \frac{\mu}{2}\||z-\tilde{w}\||^2 ~. \\]
  
-$$ \begin{align*}
+ 
+\\[
+P(z) \ge P(w^+) + \frac{\rho}{2}\|w^+-y\|^2 +\rho(y-w^+)^\top(z-y) -\left(1+\frac{\rho}{\mu}\right)\left(P(w^+;y).
+\\]
+
+$$\begin{align*}
 P(z) &=  \Psi(z) + \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
 \frac{\mu}{2} \|z-y\|^2 \\
 &\ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) +
@@ -25,31 +30,6 @@ P(z) &=  \Psi(z) + \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
 \frac{\mu}{2}\left(\|z-\tilde{w}\|^2 + \|z-y\|^2 \right) ~.
 \end{align*}
 $$
-
-$$ \begin{align*}
-&\frac{\rho}{2}\|\tilde{w}-y\|^2 + \rho(y-\tilde{w})^\top(z-y) +
-\frac{\mu}{2}\|z-\tilde{w}\|^2 - \left( \frac{\rho}{2}\|w^+-y\|^2 + \rho(y-w^+)^\top(z-y) +
-\frac{\mu}{2}\|z-w^+\|^2\right)\\
-&= \left(\rho(w^+-y)-\rho(z-y)+\mu(w^+-z)\right)^\top(\tilde{w}-w^+) +
-\frac{\rho+\mu}{2} \|\tilde{w}-w^+\|^2\\
-&= (\rho+\mu)(w^+-z)^\top(\tilde{w}-w^+) +
-\frac{\rho+\mu}{2} \|\tilde{w}-w^+\|^2\\
-&= \frac{1}{2}\left\| \sqrt{\mu}(w^+-z) + \frac{\rho+\mu}{\sqrt{\mu}} (\tilde{w}-w^+)
-\right\|^2 
-- \frac{\mu}{2} \|z-w^+\|^2 - \frac{(\rho+\mu)^2}{2\mu}\|\tilde{w}-w^+\|^2  +
-\frac{\rho+\mu}{2} \|\tilde{w}-w^+\|^2
-\\
-&\ge - \frac{\mu}{2} \|z-w^+\|^2 - \frac{\rho(\rho+\mu)}{2\mu}\|\tilde{w}-w^+\|^2
-~.
-\end{align*}
-$$
-
-
-\\[
-P(z) \ge P(w^+) + \frac{\rho}{2}\|w^+-y\|^2 +\rho(y-w^+)^\top(z-y) -\left(1+\frac{\rho}{\mu}\right)\left(P(w^+;y).
-\\]
-
-
 
 \\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\]
 
