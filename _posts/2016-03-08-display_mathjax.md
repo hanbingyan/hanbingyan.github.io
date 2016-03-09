@@ -1,6 +1,6 @@
 ---
 published: true
-title: Display Math equations and symbols
+title: Display math equations and symbols
 category: MathJax
 tags: 
   - math
@@ -9,13 +9,58 @@ layout: post
 
 先来几个较复杂的数学公式：
 
+
+\\[ \Psi(z) \ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) + \frac{\mu}{2}\|z-\tilde{w}\|^2 ~. \\]
+ 
+\\[
+\begin{align*}
+P(z) &=  \Psi(z) + \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
+\frac{\mu}{2} \|z-y\|^2 \\
+&\ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) +
+\frac{\mu}{2}\|z-\tilde{w}\|^2 +  \frac{\mu}{2} \|y\|^2 + \mu \,y^\top (z-y) +
+\frac{\mu}{2} \|z-y\|^2 \\
+&= P(\tilde{w};y) - \frac{\rho}{2}\|\tilde{w}-y\|^2+ \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) 
++ \mu \,y^\top (z-\tilde{w})  + \frac{\mu}{2}\left(\|z-\tilde{w}\|^2 +\|z-y\|^2 \right) \\
+&= P(\tilde{w};y) - \frac{\rho}{2}\|\tilde{w}-y\|^2 + \rho(y-\tilde{w})^\top(z-\tilde{w}) + \frac{\mu}{2}\left(\|z-\tilde{w}\|^2 +\|z-y\|^2 \right) \\
+&= P(\tilde{w};y) + \frac{\rho}{2}\|\tilde{w}-y\|^2 + \rho(y-\tilde{w})^\top(z-y) +
+\frac{\mu}{2}\left(\|z-\tilde{w}\|^2 + \|z-y\|^2 \right) ~.
+\end{align*}
+\\]
+
+\\[
+\begin{align*}
+&\frac{\rho}{2}\|\tilde{w}-y\|^2 + \rho(y-\tilde{w})^\top(z-y) +
+\frac{\mu}{2}\|z-\tilde{w}\|^2 - \left( \frac{\rho}{2}\|w^+-y\|^2 + \rho(y-w^+)^\top(z-y) +
+\frac{\mu}{2}\|z-w^+\|^2\right)\\
+&= \left(\rho(w^+-y)-\rho(z-y)+\mu(w^+-z)\right)^\top(\tilde{w}-w^+) +
+\frac{\rho+\mu}{2} \|\tilde{w}-w^+\|^2\\
+&= (\rho+\mu)(w^+-z)^\top(\tilde{w}-w^+) +
+\frac{\rho+\mu}{2} \|\tilde{w}-w^+\|^2\\
+&= \frac{1}{2}\left\| \sqrt{\mu}(w^+-z) + \frac{\rho+\mu}{\sqrt{\mu}} (\tilde{w}-w^+)
+\right\|^2 
+- \frac{\mu}{2} \|z-w^+\|^2 - \frac{(\rho+\mu)^2}{2\mu}\|\tilde{w}-w^+\|^2  +
+\frac{\rho+\mu}{2} \|\tilde{w}-w^+\|^2
+\\
+&\ge - \frac{\mu}{2} \|z-w^+\|^2 - \frac{\rho(\rho+\mu)}{2\mu}\|\tilde{w}-w^+\|^2
+~.
+\end{align*}
+\\]
+
+
+\\[
+P(z) \ge P(w^+) + \frac{\rho}{2}\|w^+-y\|^2 +
+\rho(y-w^+)^\top(z-y) + \frac{\mu}{2}\|z-y\|^2 - \left(1+\frac{\rho}{\mu}\right)\left(P(w^+;y)-P(\tilde{w};y)\right) ~.
+\\]
+
+
+
 \\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\]
 
 \\[ \mathbf{X} \_{n,p} = \mathbf{A} \_{n,k} \mathbf{B} \_{k,p} \\]
 
 $$ \mathsf{Data = PCs} \times \mathsf{Loadings} $$
 
-$$ \min_{w \in \reals^d} P(w) ~~~~\textrm{where}~~~~ P(w) = \left[ \frac{1}{n} \sum_{i=1}^n \phi_i( X_i^\top w) + \lambda g(w) \right]. $$
+$$ \min_{w \in \mathbf{R}^d} P(w) ~~~~\textrm{where}~~~~ P(w) = \left[ \frac{1}{n} \sum_{i=1}^n \phi_i( X_i^\top w) + \lambda g(w) \right]. $$
 
 $$ \mathbb{E}_0[P_t]=\exp\Big(f(t)+(\ln P_0-f(0))e^{-\kappa t}+\frac{\sigma^2}{4\kappa}(1-e^{-2\kappa t}) \Big) $$
 
@@ -45,7 +90,7 @@ $$ \vec{a} \cdot \vec{b}=0 $$
 
 总结一下希腊字母：
 
-$$ \alpha \beta　\gamma　\Gamma　\delta　\Delta　\epsilon \varepsilon　　\zeta　\eta　\theta　\Theta　\vartheta \iota　\kappa $$
+$$ \alpha  \beta　\gamma　\Gamma　\delta　\Delta　\epsilon \varepsilon　　\zeta　\eta　\theta　\Theta　\vartheta \iota　\kappa $$
 
 $$　\lambda　\Lambda　\mu　　\nu　\xi　\Xi　　\pi　\Pi　\varpi　　\rho　\varrho　　\sigma　\Sigma　\varsigma　　\tau　$$
 
@@ -54,11 +99,12 @@ $$　\upsilon　\Upsilon  \phi　\Phi　\varphi　\chi　　\psi　\Psi　\omega
 箭头：
 
 $$  \uparrow  \downarrow  \Uparrow \Downarrow  \rightarrow  \leftarrow  \Rightarrow $$
+
 $$  \Leftarrow  \longrightarrow  \longleftarrow  \Longrightarrow  \Longleftarrow $$
 
 划线：
 
-$$ \overline{a+b+c+d}   \underline{a+b+c+d}  \overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0} $$
+$$ \overline{a+b+c+d} $$  $$\underline{a+b+c+d} $$  $$ \overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0} $$
 
 戴帽子：
 
