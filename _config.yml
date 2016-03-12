@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl: 
-url: https://github.com/hanbingyan/hanbingyan.github.iohttps
+url: https://github.com/hanbingyan/hanbingyan.github.io
 date_format: "ordinal"
 title: My Blog
 subtitle: "学习笔记"
