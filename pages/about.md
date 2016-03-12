@@ -12,12 +12,11 @@ permalink: /about/
 ## 联系
 
 * GitHub：[@hanbingyan](https://github.com/hanbingyan)
-* Email : [@hanbingyan](hanbingyan@gmail.com)
+* Email : hanbingyan@gmail.com
 
 
 ## Skill Keywords
 
-#### Software Engineer Keywords
 <div class="btn-inline">
     {% for keyword in site.skill_software_keywords %}
     <button class="btn btn-outline" type="button">{{ keyword }}</button>

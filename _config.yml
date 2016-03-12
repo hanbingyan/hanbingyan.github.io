@@ -57,6 +57,7 @@ subscribe_rss: /feed.xml
 markdown: kramdown
 kramdown:
     input: GFM
+    enable_coderay: true
 highlighter: rouge
 paginate: 8
 lsi: false
@@ -71,6 +72,11 @@ gems:
     - jekyll-feed
     - jemoji
 #     - jekyll-mentions
+
+analytics :
+  provider : google
+  google :
+    tracking_id : 'UA-74783697-1'
 collections:
     wiki:
         output: true
@@ -92,5 +98,3 @@ changyan: false
 #      Datas       #
 # ---------------- #
 skill_software_keywords: [C++, Matlab, R, Latex]
-popular_repos: ['mzlogin.github.io']
-# contribute_repos: ['sparanoid/chinese-copywriting-guidelines', 'waylife/RentCrawer']
