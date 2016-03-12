@@ -12,7 +12,7 @@ permalink: /about/
 ## 联系
 
 * GitHub：[@hanbingyan](https://github.com/hanbingyan)
-* Email : hanbingyan@gmail.com
+* Email : hanbyan@gmail.com
 
 
 ## Skill Keywords

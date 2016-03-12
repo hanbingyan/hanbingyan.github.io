@@ -20,7 +20,7 @@ author: HAN Bingyan
 organization: No organization.
 organization_url: https://github.com/hanbingyan
 location: Hefei, China
-email: hanbingyan@gmail.com
+email: hanbyan@gmail.com
 
 # ---------------- #
 #    Navigation    #
@@ -85,7 +85,7 @@ collections:
 # ---------------- #
 #      Socials     #
 # ---------------- #
-duoshuo: false 
+duoshuo: 1826592672 
 github_username: hanbingyan
 douban: false
 facebook: false
