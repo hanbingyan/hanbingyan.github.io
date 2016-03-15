@@ -1,13 +1,75 @@
 ---
 published: true
-title: Display math equations and symbols
+title: 利用 MathJax 展示数学关系式和符号
 category: MathJax
 tags: 
   - math
 layout: post
 ---
 
-先来几个较复杂的数学公式：
+MathJax 的使用方法是：在 <head> </head> (我的是在 /_includes/header.html 里面) 之间插入以下代码，
+
+```html
+    <script type="text/javascript" async
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+```
+这是最通常的做法。其他的选择可以看 MathJax 的官方介绍。
+
+<http://docs.mathjax.org/en/latest/start.html>
+
+总结一下希腊字母：
+
+$$ \alpha  \beta　\gamma　\Gamma　\delta　\Delta　\epsilon \varepsilon　　\zeta　\eta　\theta　\Theta　\vartheta \iota　\kappa $$
+
+$$　\lambda　\Lambda　\mu　　\nu　\xi　\Xi　　\pi　\Pi　\varpi　　\rho　\varrho　　\sigma　\Sigma　\varsigma　　\tau　$$
+
+$$　\upsilon　\Upsilon  \phi　\Phi　\varphi　\chi　　\psi　\Psi　\omega　\Omega $$
+
+箭头：
+
+$$  \uparrow  \downarrow  \Uparrow \Downarrow  \rightarrow  \leftarrow  \Rightarrow $$
+
+$$  \Leftarrow  \longrightarrow  \longleftarrow  \Longrightarrow  \Longleftarrow $$
+
+划线：
+
+$$ \overline{a+b+c+d} $$  $$\underline{a+b+c+d} $$  $$ \overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0} $$
+
+戴帽子：
+
+$$ \hat{y}  \check{y}  \breve{y} $$
+
+运算符号：
+
+$$ \because  \therefore  \forall  \exists \not=  \not> \not\subset $$
+
+$$ \prime  \int  \iint  \iiint  \iiiint  \oint  \lim  \infty  \nabla $$
+
+$$ \pm $$  $$ \times $$  $$ \div $$  $$ \mid $$  $$ \nmid $$  $$ \cdot $$  $$ \circ $$
+
+$$ \ast $$  $$ \bigodot $$  $$ \bigotimes $$  $$ \bigoplus $$ $$\leq $$ $$ \geq $$
+
+$$ \neq $$  $$ \approx $$  $$ \equiv $$  $$ \sum $$  $$ \prod $$  $$ \coprod $$
+
+集合运算符：
+
+$$ \emptyset $$  $$ \in $$  $$ \notin $$  $$ \subset $$  $$ \supset $$  $$ \subseteq $$ $$ \supseteq $$
+
+$$ \bigcap $$  $$ \bigcup $$  $$ \bigvee $$  $$ \bigwedge $$ $$ \biguplus $$ $$ \bigsqcup $$
+
+对数运算符：
+
+$$ \log $$  $$ \lg $$  $$ \ln $$
+
+三角运算符：
+
+$$ \bot $$  $$ \angle $$  $$ 30^\circ $$  $$ \sin $$  $$ \cos $$ 
+
+$$ \tan $$  $$ \cot $$  $$ \sec $$  $$ \csc $$
+
+
+再看几个较复杂的数学公式：
 
 
 $$ \Psi(z) \ge \Psi(\tilde{w}) + \nabla \Psi(\tilde{w})^\top (z-\tilde{w}) + \frac{\mu}{2}\|z-\tilde{w}\|^2 ~. $$
@@ -61,54 +123,6 @@ $$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $$
 
 $$ \vec{a} \cdot \vec{b}=0 $$
 
-总结一下希腊字母：
 
-$$ \alpha  \beta　\gamma　\Gamma　\delta　\Delta　\epsilon \varepsilon　　\zeta　\eta　\theta　\Theta　\vartheta \iota　\kappa $$
-
-$$　\lambda　\Lambda　\mu　　\nu　\xi　\Xi　　\pi　\Pi　\varpi　　\rho　\varrho　　\sigma　\Sigma　\varsigma　　\tau　$$
-
-$$　\upsilon　\Upsilon  \phi　\Phi　\varphi　\chi　　\psi　\Psi　\omega　\Omega $$
-
-箭头：
-
-$$  \uparrow  \downarrow  \Uparrow \Downarrow  \rightarrow  \leftarrow  \Rightarrow $$
-
-$$  \Leftarrow  \longrightarrow  \longleftarrow  \Longrightarrow  \Longleftarrow $$
-
-划线：
-
-$$ \overline{a+b+c+d} $$  $$\underline{a+b+c+d} $$  $$ \overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0} $$
-
-戴帽子：
-
-$$ \hat{y}  \check{y}  \breve{y} $$
-
-运算符号：
-
-$$ \because  \therefore  \forall  \exists \not=  \not> \not\subset $$
-
-$$ \prime  \int  \iint  \iiint  \iiiint  \oint  \lim  \infty  \nabla $$
-
-$$ \pm $$  $$ \times $$  $$ \div $$  $$ \mid $$  $$ \nmid $$  $$ \cdot $$  $$ \circ $$
-
-$$ \ast $$  $$ \bigodot $$  $$ \bigotimes $$  $$ \bigoplus $$ $$\leq $$ $$ \geq $$
-
-$$ \neq $$  $$ \approx $$  $$ \equiv $$  $$ \sum $$  $$ \prod $$  $$ \coprod $$
-
-集合运算符：
-
-$$ \emptyset $$  $$ \in $$  $$ \notin $$  $$ \subset $$  $$ \supset $$  $$ \subseteq $$ $$ \supseteq $$
-
-$$ \bigcap $$  $$ \bigcup $$  $$ \bigvee $$  $$ \bigwedge $$ $$ \biguplus $$ $$ \bigsqcup $$
-
-对数运算符：
-
-$$ \log $$  $$ \lg $$  $$ \ln $$
-
-三角运算符：
-
-$$ \bot $$  $$ \angle $$  $$ 30^\circ $$  $$ \sin $$  $$ \cos $$ 
-
-$$ \tan $$  $$ \cot $$  $$ \sec $$  $$ \csc $$
 
 
