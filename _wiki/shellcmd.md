@@ -34,6 +34,31 @@ sudo apt-get install libstdc++6-4.2-doc
 
 现在执行命令 man std::vector 就可以看到结果了。
 
+### compgen
+
+```
+compgen -u  显示所有用户名
+compgen -g  显示所有组
+```
+
+### netstat
+
+用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各端口的网络连接情况
+
+```
+-a或–all 显示所有连线中的Socket
+-n或–numeric 直接使用IP地址，而不通过域名服务器
+-p或–programs 显示正在使用Socket的程序识别码和程序名称
+-t或–tcp 显示TCP传输协议的连线状况
+-u或–udp 显示UDP传输协议的连线状况
+```
+
+实例：
+
+```
+sudo netstat -atunp | more
+```
+
 ### diff
 
 diff 用来比较两个文件的不同，隐含的意思是，如何将第一个文件修改成第二个文件。当要执行修改时，还需要通过重定向输出一个脚本，例如：

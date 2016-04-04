@@ -1,18 +1,19 @@
 ---
 published: true
 title: Pthreads 入门教程
-category: linux
+category: Linux
 tags: 
   - cpp
   - c
 layout: post
 ---
 
+<!--more-->
 
 * TOC
 {:toc}
 
-<!--more-->
+
 
 # 前言
 
