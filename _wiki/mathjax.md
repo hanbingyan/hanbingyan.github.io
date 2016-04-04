@@ -1,10 +1,9 @@
 ---
-published: true
-title: 利用 MathJax 展示数学关系式和符号
+layout: wiki
+title: 利用 MathJax 展示数学符号和关系式
 category: MathJax
-tags: 
-  - math
-layout: post
+description: 嵌入 MathJax 到网站中
+keywords: MathJax
 ---
 
 MathJax 的使用方法是：在 <head> </head> (我的是在 /_includes/header.html 里面) 之间插入以下代码，

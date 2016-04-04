@@ -1,6 +1,6 @@
 ---
 published: true
-title: PThreads学习
+title: Pthreads 入门教程
 category: linux
 tags: 
   - cpp
@@ -18,17 +18,17 @@ layout: post
 
 本文档参考: <https://computing.llnl.gov/tutorials/pthreads/>
 
-PThreads 是 IEEE（电子和电气工程师协会）委员会开发的一组线程接口，负责指定便携式操作系统接口（POSIX）。Pthreads 中的 P 表示 POSIX，实际上，PThreads 有时候也代表 POSIX 线程。基本上，POSIX 委员会定义了一系列基本功能和数据结构，希望能够被大量厂商采用，以便线程代码能够轻松地在各种操作系统上移植。委员会的梦想由 UNIX 厂商实现了，他们都广泛 PThreads 。最著名的例外就是 Sun，它继续采用 Solaris* 线程作为其主要线程 API 。
+Pthreads 是 IEEE（电子和电气工程师协会）委员会开发的一组线程接口，负责指定便携式操作系统接口（POSIX）. Pthreads 中的 P 表示 POSIX，实际上，Pthreads 有时候也代表 POSIX 线程. 基本上，POSIX 委员会定义了一系列基本功能和数据结构，希望能够被大量厂商采用，以便线程代码能够轻松地在各种操作系统上移植. 委员会的梦想由 UNIX 厂商实现了，他们都广泛 Pthreads . 最著名的例外就是 Sun，它继续采用 Solaris 线程作为其主要线程 API . 
 
-PThreads 指定 API 来处理线程要求的大部分行为。这些行为包括创建和终止线程、等待线程完成、以及管理线程之间的交互。后面的目录中存在各种锁定机制，能够阻止两个线程同时尝试修改相同的数据值，这些锁定机制包括互斥锁、条件变量。
+Pthreads 指定 API 来处理线程要求的大部分行为. 这些行为包括创建和终止线程、等待线程完成、以及管理线程之间的交互. 后面的目录中存在各种锁定机制，能够阻止两个线程同时尝试修改相同的数据值，这些锁定机制包括互斥锁、条件变量. 
 
-在 Linux 环境下，可以在 Shell 中通过 man 查询到 PThreads 的部分函数命令,如： man pthread_create
+在 Linux 环境下，可以在 Shell 中通过 man 查询到 Pthreads 的部分函数命令,如： man pthread_create
  
 
 
 # 线程的创建和管理
 
-每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在 Linux 中就是一个无符号长整型数据。
+每个线程都有一个在进程中唯一的线程标识符，用一个数据类型 pthread_t 表示，该数据类型在 Linux 中就是一个无符号长整型数据. 
 
 ## 创建新的线程
 
@@ -38,7 +38,7 @@ int pthread_create (pthread_t *thread,pthread_attr_t *attr,void *(*start_routine
 
 若创建成功，返回0；若出错，则返回错误编号. thread 是线程标识符，但这个参数不是由用户指定的，而是由 pthread_create 函数在创建时将新的线程的标识符放到这个变量中. attr 指定线程的属性，可以用 NULL 表示默认属性. start_routine 指定线程开始运行的函数，arg 是 start_routine 所需要的参数，是一个无类型指针.
 
-默认地，线程在被创建时要被赋予一定的属性，这个属性存放在数据类型 pthread_attr_t 中，它包含了线程的调度策略，堆栈的相关信息，join or detach 的状态等。
+默认地，线程在被创建时要被赋予一定的属性，这个属性存放在数据类型 pthread_attr_t 中，它包含了线程的调度策略，堆栈的相关信息，join or detach 的状态等. 
 
 pthread_attr_init 和 pthread_attr_destroy 函数分别用来创建和销毁 pthread_attr_t，具体函数声明可参考man帮助. 
 
@@ -56,11 +56,11 @@ pthread_attr_init 和 pthread_attr_destroy 函数分别用来创建和销毁 pth
 
 * 进程调用 exec() or exit()，结束了；
 
-* main() 函数先结束了，而且 main() 自己没有调用 pthread_exit 来等所有线程完成任务。
+* main() 函数先结束了，而且 main() 自己没有调用 pthread_exit 来等所有线程完成任务. 
 
-当然，一个线程结束，并不意味着它的所有信息都已经消失，后面会看到僵尸线程的问题。
+当然，一个线程结束，并不意味着它的所有信息都已经消失，后面会看到僵尸线程的问题. 
 
-下面介绍这两个函数。
+下面介绍这两个函数. 
 
 ```cpp
 void pthread_exit (void *retval)
@@ -72,7 +72,7 @@ retval 是由用户指定的参数， pthread_exit 完成之后可以通过这�
 int pthread_cancel (pthread_t thread)
 ```
 
-一个线程可以通过调用 pthread_cancel 函数来请求取消同一进程中的线程，这个线程由thread 参数指定。如果操作成功则返回0，失败则返回对应的错误编号.
+一个线程可以通过调用 pthread_cancel 函数来请求取消同一进程中的线程，这个线程由thread 参数指定. 如果操作成功则返回0，失败则返回对应的错误编号.
 
 看一个例子：
 
@@ -139,7 +139,7 @@ Hello World! It's me, thread #2!
 
 注意输出的顺序可能不同， 要特别注意的是， main() 显示地调用了 pthread_exit() 来等待其他线程的结束.
 
-下面这个例子传给线程一些初始化用的参数。
+下面这个例子传给线程一些初始化用的参数. 
 
 ```cpp
 /******************************************************************************
@@ -244,7 +244,7 @@ Thread 6: Japan: Sekai e konnichiwa!  Sum=21
 int pthread_join(pthread_t threadid, void **value_ptr)
 ```
 
-pthread_join 函数会让调用它的线程等待 threadid 线程运行结束之后再运行. value_ptr 存放了其他线程的返回值。一个可以被join的线程，仅仅可以被别的一个线程 join，如果同时有多个线程尝试 join 同一个线程时，最终结果是未知的。另外，线程不能 join 自己。
+pthread_join 函数会让调用它的线程等待 threadid 线程运行结束之后再运行. value_ptr 存放了其他线程的返回值. 一个可以被join的线程，仅仅可以被别的一个线程 join，如果同时有多个线程尝试 join 同一个线程时，最终结果是未知的. 另外，线程不能 join 自己. 
 
 上面提到过，创建一个线程时，要赋予它一定的属性，这其中就包括joinable or detachable 的属性，只有被声明成joinable的线程，可以被其他线程join. POSIX标准的最终版本指出线程应该被设置成joinable的. 显式地设置一个线程为joinable,需要以下四个步骤：
 
@@ -256,9 +256,9 @@ pthread_join 函数会让调用它的线程等待 threadid 线程运行结束之
 
 * When done, free library resources used by the attribute with pthread_attr_destroy()
 
-值得注意的的是：僵尸线程 ( "zombie" thread) 是一种已经退出了的 joinable 的线程，但是等待其他线程调用 pthread_join 来 join 它，以收集它的退出信息(exit status). 如果没有其他线程调用 pthread_join 来 join 它的话，它占用的一些系统资源不会被释放，比如堆栈。如果main()函数需要长时间运行，并且创建大量 joinable 的线程，就有可能出现堆栈不足的 error . 对于那些不需要 join 的线程，最好利用 pthread_detach，这样它运行结束后，资源就会及时得到释放。注意一个线程被使用 pthread_detach 之后，它就不能再被改成 joinable 的了.
+值得注意的的是：僵尸线程 ( "zombie" thread) 是一种已经退出了的 joinable 的线程，但是等待其他线程调用 pthread_join 来 join 它，以收集它的退出信息(exit status). 如果没有其他线程调用 pthread_join 来 join 它的话，它占用的一些系统资源不会被释放，比如堆栈. 如果main()函数需要长时间运行，并且创建大量 joinable 的线程，就有可能出现堆栈不足的 error . 对于那些不需要 join 的线程，最好利用 pthread_detach，这样它运行结束后，资源就会及时得到释放. 注意一个线程被使用 pthread_detach 之后，它就不能再被改成 joinable 的了.
 
-总而言之，创建的每一个线程都应该使用 pthread_join 或者 pthread_detach 其中一个，以防止僵尸线程的出现。
+总而言之，创建的每一个线程都应该使用 pthread_join 或者 pthread_detach 其中一个，以防止僵尸线程的出现. 
 
 相关函数：
 
@@ -268,7 +268,7 @@ pthread_attr_setdetachstate (attr,detachstate)
 pthread_attr_getdetachstate (attr,detachstate)
 ```
 
-下面看一个例子，可以具体体会显式地设置一个线程为 joinable 的过程。
+下面看一个例子，可以具体体会显式地设置一个线程为 joinable 的过程. 
 
 ```cpp
 #include<stdlib.h>
@@ -352,7 +352,7 @@ pthread_attr_getstackaddr (attr, stackaddr)
 pthread_attr_setstackaddr (attr, stackaddr)
 ```
 
-POSIX标准没有规定一个线程的堆栈大小。安全可移植的程序不会依赖于具体实现默认的堆栈限制，而是显式地调用 pthread_attr_setstacksize 来分配足够的堆栈空间。
+POSIX标准没有规定一个线程的堆栈大小. 安全可移植的程序不会依赖于具体实现默认的堆栈限制，而是显式地调用 pthread_attr_setstacksize 来分配足够的堆栈空间. 
 
 下面是关于堆栈大小的一个例子.
 
@@ -429,13 +429,13 @@ pthread_self ()
 pthread_equal (thread1,thread2)
 ```
 
-调用pthread_self 可以返回它的 thread ID。pthread_equal 比较两个线程的 ID,如果不同则返回0,否则返回一个非零值。
+调用pthread_self 可以返回它的 thread ID. pthread_equal 比较两个线程的 ID,如果不同则返回0,否则返回一个非零值. 
 
 
 
 # 互斥锁 Mutex
 
-Mutex 常常被用来保护那些可以被多个线程访问的共享资源，比如可以防止多个线程同时更新同一个数据时出现混乱。
+Mutex 常常被用来保护那些可以被多个线程访问的共享资源，比如可以防止多个线程同时更新同一个数据时出现混乱. 
 
 使用互斥锁的一般步骤是：
 
@@ -449,7 +449,7 @@ Mutex 常常被用来保护那些可以被多个线程访问的共享资源，�
 
 * 其他线程尝试锁定这个互斥锁，重复上面的过程；
 
-* 最后互斥锁被显式地调用 pthread_mutex_destroy 来进行销毁。
+* 最后互斥锁被显式地调用 pthread_mutex_destroy 来进行销毁. 
 
 有两种方式初始化一个互斥锁：第一种，利用已经定义的常量初始化，例如
 
@@ -457,11 +457,11 @@ Mutex 常常被用来保护那些可以被多个线程访问的共享资源，�
 pthread_mutex_t mymutex = PTHREAD_MUTEX_INITIALIZER;
 ```
 
-第二种方式是调用 pthread_mutex_init (mutex,attr) 进行初始化。
+第二种方式是调用 pthread_mutex_init (mutex,attr) 进行初始化. 
 
-当多个线程同时去锁定同一个互斥锁时，失败的那些线程，如果是用 pthread_mutex_lock 函数，那么会被阻塞，直到这个互斥锁被解锁，它们再继续竞争；如果是用 pthread_mutex_trylock 函数，那么失败者只会返回一个错误。
+当多个线程同时去锁定同一个互斥锁时，失败的那些线程，如果是用 pthread_mutex_lock 函数，那么会被阻塞，直到这个互斥锁被解锁，它们再继续竞争；如果是用 pthread_mutex_trylock 函数，那么失败者只会返回一个错误. 
 
-最后需要指出的是，保护共享数据是程序员的责任。程序员要负责所有可以访问该数据的线程都使用mutex这种机制，否则，不使用 mutex 的线程还是有可能对数据造成破坏。
+最后需要指出的是，保护共享数据是程序员的责任. 程序员要负责所有可以访问该数据的线程都使用mutex这种机制，否则，不使用 mutex 的线程还是有可能对数据造成破坏. 
 
 相关函数 (具体声明可以用 man 查看 )
 
@@ -475,7 +475,7 @@ phtread_mutex_trylock(pthread_mutex_t *mutex)
 phtread_mutex_unlock(pthread_mutex_t *mutex)
 ```
 
- 下面是一个利用多线程进行向量点乘的程序，其中需要对 dotstr.sum 这个共同读写的数据进行保护。
+ 下面是一个利用多线程进行向量点乘的程序，其中需要对 dotstr.sum 这个共同读写的数据进行保护. 
 
 ```cpp
 /*****************************************************************************
@@ -641,11 +641,11 @@ Sum =  400000.000000
 
 # 条件变量 Condition Variable
 
-互斥锁只有两种状态，这限制了它的用途。条件变量允许线程在阻塞的时候等待另一个线程发送的信号，当收到信号后，阻塞的线程就被唤醒并试图锁定与之相关的互斥锁。条件变量要和互斥锁结合使用。
+互斥锁只有两种状态，这限制了它的用途. 条件变量允许线程在阻塞的时候等待另一个线程发送的信号，当收到信号后，阻塞的线程就被唤醒并试图锁定与之相关的互斥锁. 条件变量要和互斥锁结合使用. 
 
 ## 条件变量的声明和初始化
 
-通过声明 pthread_cond_t 类型的数据,并且必须先初始化才能使用。
+通过声明 pthread_cond_t 类型的数据,并且必须先初始化才能使用. 
 
 初始化的方法也有两种：
 
@@ -655,9 +655,9 @@ Sum =  400000.000000
 pthread_cond_t myconvar = PTHREAD_COND_INITIALIZER;
 ```
 
-第二种，利用函数 pthread_cond_init(cond,attr),其中 attr 由 pthread_condattr_init() 和 pthread_condattr_destroy() 创建和销毁。
+第二种，利用函数 pthread_cond_init(cond,attr),其中 attr 由 pthread_condattr_init() 和 pthread_condattr_destroy() 创建和销毁. 
 
-可以用 pthread_cond_destroy() 销毁一个条件变量。
+可以用 pthread_cond_destroy() 销毁一个条件变量. 
 
 相关函数：
 
@@ -667,11 +667,11 @@ pthread_cond_signal (condition)
 pthread_cond_broadcast (condition)
 ```
 
-pthread_cond_wait() 会阻塞调用它的线程，直到收到某一信号。这个函数需要在 mutex 已经被锁之后进行调用，并且当线程被阻塞时，会自动解锁 mutex. 信号收到后，线程被唤醒，这时 mutex 又会被这个线程锁定。
+pthread_cond_wait() 会阻塞调用它的线程，直到收到某一信号. 这个函数需要在 mutex 已经被锁之后进行调用，并且当线程被阻塞时，会自动解锁 mutex. 信号收到后，线程被唤醒，这时 mutex 又会被这个线程锁定. 
 
-pthread_cond_signal() 函数结束时，必须解锁 mutex，以供 pthread_cond_wait() 锁定mutex. 当不止一个线程在等待信号时，要用 pthread_cond_broadcast() 代替 pthread_cond_signal() 来告诉所有被该条件变量阻塞的线程结束阻塞状态。
+pthread_cond_signal() 函数结束时，必须解锁 mutex，以供 pthread_cond_wait() 锁定mutex. 当不止一个线程在等待信号时，要用 pthread_cond_broadcast() 代替 pthread_cond_signal() 来告诉所有被该条件变量阻塞的线程结束阻塞状态. 
 
-下面是一个例子，三个线程共同访问 count 变量，thread 2 和 thread 3 竞争地对其进行加 1 的操作，thread 1 等 count 达到 12 的时候，一次性加 125 。然后 thread 2 和 thread 3 再去竞争 count 的控制权，直到完成自己的对 count 加 10 次的任务. 
+下面是一个例子，三个线程共同访问 count 变量，thread 2 和 thread 3 竞争地对其进行加 1 的操作，thread 1 等 count 达到 12 的时候，一次性加 125 . 然后 thread 2 和 thread 3 再去竞争 count 的控制权，直到完成自己的对 count 加 10 次的任务. 
 
 ```cpp
 /******************************************************************************
