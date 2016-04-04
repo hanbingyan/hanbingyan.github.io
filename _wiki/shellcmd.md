@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: Shell
+title: Shell 命令简介
 categories: Shell
 description: Shell Command  简介
 keywords: Shell Command
